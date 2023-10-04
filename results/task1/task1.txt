@@ -1,0 +1,12 @@
+04 October 2023 10:55:08 AM
+
+MATMUL:
+  C = A * B.
+  Order N                 = 300
+  Elapsed seconds = 0.163846
+  C(100,100)  = 1
+
+Matmul:
+  Normal end of execution.
+
+04 October 2023 10:55:08 AM
