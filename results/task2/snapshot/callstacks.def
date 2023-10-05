@@ -1,0 +1,40 @@
+# callstacks file version: 8
+#    rowid	    parent	       rva	 loop	 system	                                function	binary	instance_start_rva	instance_size	instance_end_rva	finst_rowid	roi	is_inlined	jit_method_id	tripcounts_roi	flops_roi	cachesim_roi	data_transfer_roi	projection_roi
+         1	        -1	      4352	    0	      0	                                  _start	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4352	38	0	1	0	0	0	0	0	0	0	0
+         2	        -1	      4388	    0	      0	                                  _start	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4352	38	0	1	0	0	0	0	0	0	0	0
+         3	        18	    146442	    1	      1	     [Loop@0x23beb in __libc_start_main]	/usr/lib64/libc.so.6	146411,146544	132,67	0	5	0	0	0	0	0	0	0	0
+         4	         3	    146249	    0	      1	                            func@0x23ad0	/usr/lib64/libc.so.6	146128	176	0	10	0	0	0	0	0	0	0	0
+         5	        21	      4917	    1	      0	               [Loop at line 47 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4865	154	5019	2	0	0	0	0	0	0	0	0
+         6	        25	      5304	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+         7	        25	      5335	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+         8	        25	      5368	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+         9	        25	      5331	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        10	        25	      5268	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        11	        25	      5285	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        12	        25	      5353	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        13	        25	      5357	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        14	        25	      5322	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        15	        24	      5226	    1	      0	               [Loop at line 69 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5189	206	5395	8	0	0	0	0	0	0	0	0
+        16	        25	      5250	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        17	        25	      5295	    1	      0	               [Loop at line 72 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5238	138	5376	7	0	0	0	0	0	0	0	0
+        18	         2	    146411	    0	      1	                       __libc_start_main	/usr/lib64/libc.so.6	146304	337	0	6	0	0	0	0	0	0	0	0
+        19	         2	    146442	    0	      1	                       __libc_start_main	/usr/lib64/libc.so.6	146304	337	0	6	0	0	0	0	0	0	0	0
+        20	         4	      4846	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        21	        20	      4865	    1	      0	               [Loop at line 45 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4846	192	5038	4	0	0	0	0	0	0	0	0
+        22	         4	      4917	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        23	         4	      5170	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        24	        23	      5189	    1	      0	               [Loop at line 67 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5170	244	5414	9	0	0	0	0	0	0	0	0
+        25	        24	      5238	    1	      0	               [Loop at line 69 in main]	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	5189	206	5395	8	0	0	0	0	0	0	0	0
+        26	         4	      5304	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        27	         4	      5335	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        28	         4	      5368	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        29	         4	      5331	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        30	         4	      5268	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        31	         4	      5285	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        32	         4	      5353	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        33	         4	      5357	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        34	         4	      5322	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        35	         4	      5226	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        36	         4	      5250	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        37	         4	      5295	    0	      0	                                    main	/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable	4592	1069	0	3	0	0	0	0	0	0	0	0
+        38	        -1	         0	    0	      0	                [Unknown stack frame(s)]	n/a	0	0	0	12	0	0	0	0	0	0	0	0

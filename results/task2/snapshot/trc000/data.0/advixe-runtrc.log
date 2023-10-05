@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2023/10/04 16:06:46</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>bandwidth-measurement-starts</type>
+</msg>
+<msg id="3" tool="runtool">
+  <type>bandwidth-measurement-done</type>
+</msg>
+<msg id="4" tool="runtool">
+  <type>collector-starts</type>
+</msg>
+<msg id="5" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/redbed24/Workspaces/ArCo/Tutorial/e000/trc000/trc000.advixe</arg>
+</msg>
+<msg id="6" tool="trc">
+  <type>PROCESS_START</type>
+  <arg>/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable</arg>
+  <arg>7731</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:57 2023</timestamp>
+</msg>
+<msg id="7" tool="trc">
+  <type>PROCESS_ANALYSIS_MODE</type>
+  <arg>full</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:57 2023</timestamp>
+</msg>
+<msg id="8" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable</arg>
+  <arg>0x400000</arg>
+  <arg>0x41e9e7</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:57 2023</timestamp>
+</msg>
+<msg id="9" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <arg>0x7f48a79d5000</arg>
+  <arg>0x7f48a7a092b7</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:57 2023</timestamp>
+</msg>
+<msg id="10" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <arg>0x7ffe65bfa000</arg>
+  <arg>0x7ffe65bfafee</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:57 2023</timestamp>
+</msg>
+<msg id="11" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libstdc++.so.6</arg>
+  <arg>0x7f4892400000</arg>
+  <arg>0x7f48926530bf</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="12" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libm.so.6</arg>
+  <arg>0x7f4892292000</arg>
+  <arg>0x7f48923720f7</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="13" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libgcc_s.so.1</arg>
+  <arg>0x7f4892266000</arg>
+  <arg>0x7f48922891a7</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="14" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libiomp5.so</arg>
+  <arg>0x7f4891c00000</arg>
+  <arg>0x7f489204114f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="15" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/lib/libsycl.so.6</arg>
+  <arg>0x7f4891800000</arg>
+  <arg>0x7f4891b1da8f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="16" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libc.so.6</arg>
+  <arg>0x7f4891622000</arg>
+  <arg>0x7f48917ffd2f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="17" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/librt.so.1</arg>
+  <arg>0x7f489218f000</arg>
+  <arg>0x7f489219301f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="18" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libpthread.so.0</arg>
+  <arg>0x7f4892181000</arg>
+  <arg>0x7f489218500f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="19" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libdl.so.2</arg>
+  <arg>0x7f489217c000</arg>
+  <arg>0x7f489218000f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:06:59 2023</timestamp>
+</msg>
+<msg id="20" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libsvml.so</arg>
+  <arg>0x7f488fe00000</arg>
+  <arg>0x7f489142e203</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:00 2023</timestamp>
+</msg>
+<msg id="21" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libirng.so</arg>
+  <arg>0x7f488fa00000</arg>
+  <arg>0x7f488fd16357</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:00 2023</timestamp>
+</msg>
+<msg id="22" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libimf.so</arg>
+  <arg>0x7f488f600000</arg>
+  <arg>0x7f488f9e979f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:00 2023</timestamp>
+</msg>
+<msg id="23" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libintlc.so.5</arg>
+  <arg>0x7f4892104000</arg>
+  <arg>0x7f489217bc57</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:00 2023</timestamp>
+</msg>
+<msg id="24" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="25" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="26" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="27" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libstdc++.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="28" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libm.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="29" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libgcc_s.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="30" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libiomp5.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="31" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/lib/libsycl.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="32" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libc.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="33" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/librt.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="34" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libpthread.so.0</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="35" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libdl.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="36" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libsvml.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="37" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libirng.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="38" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libimf.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="39" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libintlc.so.5</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="40" tool="trc">
+  <type>PROCESS_FINISH</type>
+  <arg>/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/executable</arg>
+  <arg>7731</arg>
+  <arg>0x0</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Oct  4 16:07:03 2023</timestamp>
+</msg>
+<msg id="41" tool="runtool">
+  <type>app-exit-code</type>
+  <arg>0</arg>
+</msg>
+<msg id="42" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/redbed24/Workspaces/ArCo/Tutorial/e000/trc000/trc000.advixe</arg>
+</msg>
+<msg id="43" tool="runtool">
+  <type>collector-done</type>
+</msg>
+<msg id="44" tool="runtool">
+  <type>log-end</type>
+  <arg>2023/10/04 16:07:07</arg>
+</msg>
+
+</log>
+

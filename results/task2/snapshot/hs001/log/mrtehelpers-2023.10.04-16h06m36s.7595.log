@@ -1,0 +1,5 @@
+203 [140613810906816] INFO mrtehelpers.mrteenv <> - Product libs directory: /home/redbed24/intel/oneapi/advisor/2023.2.0/lib64
+203 [140613810906816] INFO mrtehelpers.mrteenv <> - File mask: advixe_samplingmrte_clrprof*
+232 [140613810906816] INFO mrtehelpers.mrteenv <> - File name: lib
+232 [140613810906816] ERROR mrtehelpers.mrteenv <> - Failed to init shared library lib located at /home/redbed24/intel/oneapi/advisor/2023.2.0/lib64, at file: vcs/mrtehelpers3/src/mrteenv/mrte_profiling_initializer.cpp:362
+232 [140613810906816] ERROR mrtehelpers.mrteenv <> - CLR support is disabled because profiler GUID is empty, at file: vcs/mrtehelpers3/src/mrteenv/mrte_profiling_initializer.cpp:185

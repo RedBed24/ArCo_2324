@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="" 
+                             kind="DATAKIND_SURVEY_EX" >
+  <hotspot filename="/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/matmul.cpp"
+           line_no="72"
+           routine="main"
+           is_vectorized="0"
+           self_time="4.499765E-01"
+           total_time="4.499765E-01"
+           trip_counts="300"
+           func_instance="7"
+           priority="0"/>
+  <hotspot filename="/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/matmul.cpp"
+           line_no="47"
+           routine="main"
+           is_vectorized="0"
+           self_time="1.002512E-02"
+           total_time="1.002512E-02"
+           trip_counts="300"
+           func_instance="2"
+           priority="0"/>
+  <hotspot filename="/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/matmul.cpp"
+           line_no="69"
+           routine="main"
+           is_vectorized="0"
+           self_time="9.998429E-03"
+           total_time="4.599749E-01"
+           trip_counts="300"
+           func_instance="8"
+           priority="0"/>
+  <hotspot filename="/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/matmul.cpp"
+           line_no="45"
+           routine="main"
+           is_vectorized="0"
+           self_time="0.000000E+00"
+           total_time="1.002512E-02"
+           trip_counts="300"
+           func_instance="4"
+           priority="0"/>
+  <hotspot filename="/home/redbed24/git/lab1-samuel-espejo_noelia-diaz-alejo/src/matmul.cpp"
+           line_no="67"
+           routine="main"
+           is_vectorized="0"
+           self_time="0.000000E+00"
+           total_time="4.599749E-01"
+           trip_counts="300"
+           func_instance="9"
+           priority="0"/>
+</IntelParallelAdvisorSummary >
