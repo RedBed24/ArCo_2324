@@ -86,12 +86,20 @@ $ dpcpp -g -fopenmp matmul.cpp -o executable
 ```
 
 Observamos una nota:
-*"icpx: remark: Note that use of '-g' without any optimization-level option will turn off most compiler optimizations similar to use of '-O0'; use '-Rno-debug-disables-optimization' to disable this remark [-Rdebug-disables-optimization]"*.
+*"icpx: remark: Note that use of `-g` without any optimization-level option will turn off most compiler optimizations similar to use of `-O0`; use `-Rno-debug-disables-optimization` to disable this remark [-Rdebug-disables-optimization]"*.
 Esta indica que al usar la flag `-g`, se deshabilitan las optimizaciones.
-Cosa que no queremos ya que el primer ejecutable contaba con estas, para poder hacer una comparación correcta, este también debería contar con las optimizaciones.
-Podemos activarlas añadiendo la flag `-Rno-debug-disables-optimization`.
+Cosa que queremos ya que el primer ejecutable tampoco contaba con estas.
+Si vemos el manual de g++, `-O0` se usa por defecto, es decir, sin optimizaciones.
+Para poder hacer una comparación correcta, ambos deben contar con la misma cantidad de optimizaciones.
 
-``` Bash
-$ dpcpp -g -fopenmp -Rno-debug-disables-optimization matmul.cpp -o executable
-```
+Ejecutamos de nuevo con los mismos análisis y creamos otro snapshot que guaradaremos en [tarea 2](results/task2).
+
+Analizando un poco las snapshots, las cuales podemos abrir como si fuese un proyecto en advisor.
+Nos damos cuenta de que la ejecución del compilado con dpcpp tardó considerablemente más tiempo que la primera, 0.48s frente a 0.19s, aunque hayan sido ejecutados en el mismo ordenador.
+Es posible que no fuese en las mismas condiciones ya que se tiene en uso una configuración para que el ordenador se ponga en modo ahorro de energía y por ende, baje el rendimiento dependiendo de si está enchufado a corriente o no.
+Para comprobar si esto es así, se han vuelto a realizar los análisis asegurando que la configuración antes mencionada no sea una variable.
+Tienen el mismo nombre pero con un 2 al final.
+
+Tras ver los tiempos, nos damos cuenta que no hay diferencias entre usar un compilador u otro.
+Todos los parámetros del resumen son lo suficientemente parecidos como para asumir que los cambios son producidos por otros factores como el scheduler del OS.
 
