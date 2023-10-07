@@ -79,6 +79,8 @@ El nombre es warning y este es una carpeta en el workspace seleccionado en la cr
 Para saber qué compilador debemos usar, podemos rebuscar en las carpetas de intel por ejecutables y buscar algo como "cpp" (C++).
 Observamos dpcpp y al ver su manual nos indica que es el compilador de intel.
 
+## Tarea 2.2
+
 Al recompilar el código con el compilador apropiado:
 
 ``` Bash
@@ -102,4 +104,87 @@ Tienen el mismo nombre pero con un 2 al final.
 
 Tras ver los tiempos, nos damos cuenta que no hay diferencias entre usar un compilador u otro.
 Todos los parámetros del resumen son lo suficientemente parecidos como para asumir que los cambios son producidos por otros factores como el scheduler del OS.
+
+# Tarea 3
+
+Ahora tendremos que ejecutar el código en los nodos de cómputo de devcloud.
+Para ello, suponemos que tenemos configurado los acessos mediante ssh, es decir:
+
+``` Bash
+$ ssh devcloud
+```
+
+Nos lleva correctamente a los servidores de login de devcloud.
+
+Primero debemos pasar el código al devcloud, que desde el directorio base del repositorio es:
+
+``` Bash
+$ # creamos una carpeta donde guardar lo relacionado a toda la entrega
+$ ssh devcloud mkdir entregable1/
+$ # copiamos por ssh el código al servidor devcloud, dentro de la carpeta creada
+$ scp src/matmul.cpp devcloud:entregable1/
+```
+
+*También se puede intentar copiar el ejecutable directamente y ejecutarlo allí.
+Esto causa problema con las librerías, cosa que nos dimos cuenta una vez intentamos hacerlo.
+Suponemos que el hecho de compilar allí indica al servidor qué librerías van a ser necesarias.*
+
+Ahora, compilaremos, con la misma instrucción usada en la [tarea 2.2](#tarea-2.2).
+
+Para analizar el programa, lo haremos desde un nodo de cómputo, podemos pedir uno mediante:
+
+``` Bash
+$ qsub -I
+```
+
+Es importante guardar información sobre las *specs* del nodo que nos ha tocado, para ello podremos usar `lscpu` y redireccionar la salida a un archivo de texto que luego nos guardaremos.
+
+Al intentar ejecutar `advisor-gui`, nos damos cuenta de un "problema", el servidor ssh no nos permite usar aplicaciones gráficas.
+Lo comprobamos mediante:
+
+``` Bash
+$ ssh -X devcloud
+X11 forwarding request failed on channel 0
+```
+
+Por lo que tendremos que usar la cli de advisor.
+Para ver los argumentos a usar, podemos ver la ayuda:
+
+``` Bash
+$ advisor --help
+# ...
+ Perform a Survey analysis.
+
+        advisor --collect=survey --project-dir=./advi --search-dir src:r=./src -- ./bin/myApplication
+# ...
+```
+
+Como se nos pide usar otros análisis, simplemente tendremos que añadir otros argumentos `--collect=analisis` con los tipos que queremos, en este caso Trip Counts y FLOP
+
+También podemos ver la linea de comandos usada para la tarea 2 abiendo el proyecto\>workflow\>get commnand line, lo que nos devueve:
+
+``` Bash
+$ advisor -collect survey -project-dir proyecto --app-working-dir=src -- src/executable
+$ advisor -collect tripcounts -flop -project-dir proyecto --app-working-dir=src -- src/executable
+```
+
+*Realmente, esta es una versión reducida donde hemos eliminado cosas innecesarias como las rutas absolutas a las carpetas.*
+
+Pero nos damos cuenta de que tendremos que realizar 2 llamadas a advisor.
+
+Ahora, realizaremos esto y tendremos que cear un snapshot.
+
+Nos podremos infomar mediante:
+
+``` Bash
+$ advisor --help snapshot
+```
+
+Una vez hecho esto, nos saldremos de devcloud y desde nuestra máquina, nos traeremos los archivos necesarios con el comando:
+
+``` Bash
+$ scp devcloud:entregable1/ficheros_a_traer directorio_destino/
+```
+
+Esto nos pone los ficheros en el directorio directorio\_destino.
 
