@@ -195,3 +195,11 @@ $ scp devcloud:entregable1/ficheros_a_traer directorio_destino/
 Esto nos pone los ficheros en el directorio directorio\_destino.
 Sólo nos tenemos que traer lo que esté dentro del directorio proyecto/snapshot-devcloud, podemos usar la flag `-r` para traernos los ficheros de manera recursiva.
 
+# Tarea 4
+
+Los resultados de esta tarea se encuentran donde se nos [especifica](results/task4/comparacion.md).
+
+# Tarea 5
+
+Los resultados de esta tarea se encuentran donde se nos [especifica](results/task5/caracteristicas.md).
+
