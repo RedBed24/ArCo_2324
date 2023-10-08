@@ -180,6 +180,12 @@ Nos podremos infomar mediante:
 $ advisor --help snapshot
 ```
 
+Y ejecutamos:
+
+``` Bash
+$ advisor --snapshot --project-dir=proyecto --pack --cache-sources --cache-binaries -- proyecto/snapshot-devcloud/
+```
+
 Una vez hecho esto, nos saldremos de devcloud y desde nuestra máquina, nos traeremos los archivos necesarios con el comando:
 
 ``` Bash
@@ -187,4 +193,5 @@ $ scp devcloud:entregable1/ficheros_a_traer directorio_destino/
 ```
 
 Esto nos pone los ficheros en el directorio directorio\_destino.
+Sólo nos tenemos que traer lo que esté dentro del directorio proyecto/snapshot-devcloud, podemos usar la flag `-r` para traernos los ficheros de manera recursiva.
 
