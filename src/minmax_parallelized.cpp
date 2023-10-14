@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define N 500000 // Probar distintos tamaños de vector
+#define N TAMAÑO // Probar distintos tamaños de vector
 
 #include <omp.h>
 
@@ -32,29 +32,25 @@ int main(int argc, char **argv)
 	#pragma omp parallel for
 	for (i = 0; i < N; i++)
 	{
+		// cambiamos a if para que no se esté asignando el valor en cada iteración
 		if (max < v[i])
 		{
-			#pragma omp atomic
 			max = v[i];
 		}
 		else if (min > v[i])
 		{
-			#pragma omp atomic
 			min = v[i];
 		}
 	}
-
-	// Como comprobación, se visualizan los valores del vector y la suma
-	printf("\nVector de números: \n ");
 
 	// Nos da igual el orden de muestra ya que son aleatorios que no se han generado siguiendo un orden
 	#pragma omp simd
 	for (i = 0; i < N; i++)
 	{
-		printf("%d\t", v[i]);
+		printf("%d ", v[i]);
 	}
 
-	printf("\nmin: %d\nmax: %d\n", min, max);
+	printf("\n%d %d\n", min, max);
 
 	return 0;
 }

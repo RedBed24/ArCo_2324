@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define N 50 // Probar distintos tamaños de vector
+#define N TAMAÑO // Probar distintos tamaños de vector
 
 int main(int argc, char** argv)
 {
@@ -29,15 +29,14 @@ int main(int argc, char** argv)
 		min = min > v[i] ? v[i] : min;
 	}
 
-	// Como comprobación, se visualizan los valores del vector y la suma
-	printf("\nVector de números: \n ");
-
+	// mostramos los valores en una misma línea separada por espacios para una comprobación fácil de resultados
 	for (i = 0; i < N; i++)
 	{
-		printf("%d\t", v[i]);
+		printf("%d ", v[i]);
 	}
 
-	printf("\nmin: %d\nmax: %d\n", min, max);
+	// mostramos los resultados obtenidos
+	printf("\n%d %d\n", min, max);
 
 	return 0;
 }
