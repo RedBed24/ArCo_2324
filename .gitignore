@@ -1,0 +1,7 @@
+# Ignore Vim backup files
+*~
+*.swp
+
+# Ignore build target directory
+bin/
+
