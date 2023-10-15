@@ -9,7 +9,7 @@
 
 int main()
 {
-	int i, sum = 0;
+	int sum = 0;
 	int v[N];
 
 	double start = omp_get_wtime();
@@ -17,18 +17,29 @@ int main()
 	// Damos valores aleatorios al vector (entre 0 y 99)
 	srand(time(NULL)); // Semilla de números aleatorios
 
-	for (i = 0; i < N; i++) {
+	#pragma omp parallel for
+	for (int i = 0; i < N; i++) {
 		v[i] = rand() % 100;
 	}
 
-	// Cálculo del sumatorio
-	#pragma omp parallel for reduction(+:sum)
-	for (i = 0; i < N; i++) {
-		sum += v[i];
-	}
+	#pragma omp parallel sections
+	{
+		#pragma omp section
+		{
+			// Cálculo del sumatorio
+			#pragma omp parallel for reduction(+:sum)
+			for (int i = 0; i < N; i++) {
+				sum += v[i];
+			}
+		}
 
-	for (i = 0; i < N; i++) {
-		printf("%d\t", v[i]);
+		#pragma omp section
+		{
+			#pragma omp parallel for
+			for (int i = 0; i < N; i++) {
+				printf("%d ", v[i]);
+			}
+		}
 	}
 
 	printf("\n%d\n", sum);
