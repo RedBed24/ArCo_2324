@@ -10,6 +10,8 @@ int main()
 	double pi16ds = 3.1415926535897932; // con 25 decimales 3.141592653589793238462643
 	double sum = 0.0;
 
+	omp_set_num_threads(8);
+
 	double h = 1.0 / (double)n; // tamaño intervalo
 
 	#pragma omp parallel for private(i, xi) reduction(+:sum)

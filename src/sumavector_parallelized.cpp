@@ -14,6 +14,8 @@ int main()
 
 	double start = omp_get_wtime();
 
+	omp_set_num_threads(8);
+
 	// Damos valores aleatorios al vector (entre 0 y 99)
 	srand(time(NULL)); // Semilla de números aleatorios
 

@@ -15,6 +15,8 @@ int main(int argc, char **argv)
 
 	double start = omp_get_wtime();
 
+	omp_set_num_threads(8);
+
 	// Generamos los valores de la matriz dando un rango definido por el mínimo y máximo previamente dados
 	srand(time(NULL));
 
