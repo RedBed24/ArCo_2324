@@ -7,5 +7,5 @@ with open(sys.argv[1], "r") as f:
 
     mini, maxi = f.readline()[:-1].split()
 
-    print(f"{int(mini) == min(valores)} {int(maxi) == max(valores)}")
+    print(f"{int(mini) == min(valores)} {int(maxi) == max(valores)} {f.readline()[:-1]}")
 

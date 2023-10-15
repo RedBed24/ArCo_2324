@@ -13,6 +13,8 @@ int main(int argc, char **argv)
 	int v[N];
 	int min{0}, max{100};
 
+	double start = omp_get_wtime();
+
 	// Generamos los valores de la matriz dando un rango definido por el mínimo y máximo previamente dados
 	srand(time(NULL));
 
@@ -51,6 +53,7 @@ int main(int argc, char **argv)
 	}
 
 	printf("\n%d %d\n", min, max);
+	printf("%f\n", omp_get_wtime() - start);
 
 	return 0;
 }

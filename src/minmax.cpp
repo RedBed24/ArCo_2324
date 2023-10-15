@@ -5,11 +5,15 @@
 #include <time.h>
 #define N TAMAÑO // Probar distintos tamaños de vector
 
+#include <omp.h>
+
 int main(int argc, char** argv)
 {
 	int i;
 	int v[N];
 	int min{0}, max{100};
+
+	double start = omp_get_wtime();
 
 	// Generamos los valores de la matriz dando un rango definido por el mínimo y máximo previamente dados
 	srand(time(NULL));
@@ -37,6 +41,7 @@ int main(int argc, char** argv)
 
 	// mostramos los resultados obtenidos
 	printf("\n%d %d\n", min, max);
+	printf("%f\n", omp_get_wtime() - start);
 
 	return 0;
 }
