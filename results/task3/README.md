@@ -13,8 +13,18 @@ Una vez hecho esto, la paralelización es igual que en los casos anteriores.
 
 # Comparaciones
 
+Se ha empezado a partir de la entrada 500 porque este tiene un comportamiento mucho más interesante que los anteriores.
+
+| codigo \ tamaño | 5        | 50       | 500      | 5.000    | 50.000   | 500.000  | 5.000.000 | 50.000.000 |
+| :--             | :--:     | :--:     | :--:     | :--:     | :--:     | :--:     | :--:      | :--:       |
+| secuencial      | 0.000020 | 0.000022 | 0.000023 | 0.000023 | 0.000051 | 0.000390 | 0.003094  | 0.032500   |
+| pralelizado     | 0.002277 | 0.002153 | 0.002217 | 0.002245 | 0.002593 | 0.002444 | 0.003273  | 0.013014   |
+
 En este caso, podemos observar muchas más diferencias.
-El código paralelizado es capaz de superar al secuencial al aumentar el tamaño.
+El código paralelizado es capaz de mantener más o menos el mismo tiempo independientemente de la entrada.
+El secuencial no empieza a aumentar significativamente hasta que se llega a las 50.000 iteraciones, a partir de la cual aumenta muy aceleradamente.
+Incluso llegando a superar al paralelizado.
+
 Pero nos damos cuenta de un problema:
 El cálculo de pi difiere del secuencial.
 
