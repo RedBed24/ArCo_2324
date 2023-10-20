@@ -11,6 +11,9 @@ Self-time: tiempo que tarda una función o bucle en ejecutarse, excluyendo el ti
 La diferencia entre ambos es que el tiempo total incluye el tiempo de ejecución de todos los subprocesos, mientras que el tiempo de autoejecución no. Esto significa que el tiempo de autoejecución siempre será menor o igual que el tiempo total.
 
 * Realiza un análisis de tipo Survey, accede a  la pestaña "Survey & Roofline" y haz una captura de la información (se usará más tarde).
+
+![tarea1.2](tarea1.2.png)
+
 * Pulsa sobre roofline (dentro de Survey & Roofline) y comprueba que no aparece ningún gráfico. ¿A qué se debe?
 * Haz un análisis de trip-counts y flop. ¿Qué información nueva aparece en la vista de survey? Haz una captura y comenta
 los datos nuevos más relevantes.
