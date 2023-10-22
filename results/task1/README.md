@@ -15,5 +15,8 @@ La diferencia entre ambos es que el tiempo total incluye el tiempo de ejecución
 ![tarea1.2](tarea1.2.png)
 
 * Pulsa sobre roofline (dentro de Survey & Roofline) y comprueba que no aparece ningún gráfico. ¿A qué se debe?
+
+Se debe a que los datos de la línea del techo no están disponibles. El informe de la línea del techo depende de los datos de operaciones de punto flotante y enteros. Para recopilar dichos datos, debemos seleccionar y ejecutar el análisis FLOP en el panel de trabajo.
+  
 * Haz un análisis de trip-counts y flop. ¿Qué información nueva aparece en la vista de survey? Haz una captura y comenta
 los datos nuevos más relevantes.
