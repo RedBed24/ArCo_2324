@@ -12,7 +12,6 @@ La diferencia entre ambos es que el tiempo total incluye el tiempo de ejecución
 
 * Realiza un análisis de tipo Survey, accede a  la pestaña "Survey & Roofline" y haz una captura de la información (se usará más tarde).
 
-![tarea1.2](tarea1.2.png)
 
 * Pulsa sobre roofline (dentro de Survey & Roofline) y comprueba que no aparece ningún gráfico. ¿A qué se debe?
 
