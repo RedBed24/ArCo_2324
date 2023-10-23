@@ -12,6 +12,7 @@ La diferencia entre ambos es que el tiempo total incluye el tiempo de ejecución
 
 * Realiza un análisis de tipo Survey, accede a  la pestaña "Survey & Roofline" y haz una captura de la información (se usará más tarde).
 
+[Snapshot correspondiente al punto 1.2](Tarea1.2.advixeexpz)
 
 * Pulsa sobre roofline (dentro de Survey & Roofline) y comprueba que no aparece ningún gráfico. ¿A qué se debe?
 
@@ -19,3 +20,7 @@ Se debe a que los datos de la línea del techo no están disponibles. El informe
   
 * Haz un análisis de trip-counts y flop. ¿Qué información nueva aparece en la vista de survey? Haz una captura y comenta
 los datos nuevos más relevantes.
+
+
+
+[Snapshot correspondiente al punto 1.4](Tarea1.4.advixeexpz)
