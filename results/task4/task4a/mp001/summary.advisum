@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="0.1" 
+                             kind="DATAKIND_MAP" >
+
+  <site filename="/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/src/complexmul.cpp"
+        line_no="27"
+        label="loop_site_5" 
+        loop_name="main" 
+        is_vectorized="1">
+    <strides unit="2"
+             const="1"
+             variable="0" />
+  </site>
+
+  <site filename="/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/src/complexmul.cpp"
+        line_no="28"
+        label="loop_site_4" 
+        loop_name="main" 
+        is_vectorized="0">
+    <strides unit="1"
+             const="0"
+             variable="0" />
+  </site>
+
+</IntelParallelAdvisorSummary >

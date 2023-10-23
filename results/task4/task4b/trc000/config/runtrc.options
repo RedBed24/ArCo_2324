@@ -1,0 +1,12 @@
+-r
+/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/analisis_no_vectorizado/e000/trc000
+--return-app-exitcode
+--cs-mode=count-loops,count-flops,stl-profiling,stack-stitching
+--count-flops
+--benchmarks=dram,mcdram,cpu_cache,flop_peak,int,
+--cs-file=/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/analisis_no_vectorizado/e000/callstacks.def
+--jit-profiling
+--target-gpu=0:0:2.0
+--app-working-dir=/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia
+--
+/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized_unit

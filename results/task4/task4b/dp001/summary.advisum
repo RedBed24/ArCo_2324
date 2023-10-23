@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="0.1" 
+                             kind="DATAKIND_CORRECTNESS" >
+  <site filename="/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/complexmul_unit_stride.cpp" 
+        line_no="28" 
+        label="loop_site_6" 
+        loop_name="main" 
+        is_vectorized="0">
+    <dependencies RAW="0" 
+                  WAR="0" 
+                  WAW="0" 
+                  potentialWAR="0" 
+                  potentialWAW="0" 
+                  potentialReduction="0" 
+                  nobegin="0"/>
+  </site> 
+</IntelParallelAdvisorSummary >

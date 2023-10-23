@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="" 
+                             kind="DATAKIND_SURVEY_EX" >
+  <hotspot filename="/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/complexmul_unit_stride.cpp"
+           line_no="28"
+           routine="main"
+           is_vectorized="2"
+           self_time="5.000000E-01"
+           total_time="5.000000E-01"
+           trip_counts="3125"
+           func_instance="2"
+           priority="0"/>
+  <hotspot filename="/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/complexmul_unit_stride.cpp"
+           line_no="27"
+           routine="main"
+           is_vectorized="1"
+           self_time="0.000000E+00"
+           total_time="5.000000E-01"
+           trip_counts="50000"
+           func_instance="6"
+           priority="0"/>
+</IntelParallelAdvisorSummary >
