@@ -1,0 +1,37 @@
+# callstacks file version: 8
+#    rowid	    parent	       rva	 loop	 system	                                function	binary	instance_start_rva	instance_size	instance_end_rva	finst_rowid	roi	is_inlined	jit_method_id	tripcounts_roi	flops_roi	cachesim_roi	data_transfer_roi	projection_roi
+         1	        -1	      4416	    0	      0	                                  _start	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4416	38	0	1	0	0	0	0	0	0	0	0
+         2	        -1	      4452	    0	      0	                                  _start	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4416	38	0	1	0	0	0	0	0	0	0	0
+         3	        33	    146442	    1	      1	     [Loop@0x23beb in __libc_start_main]	/usr/lib64/libc.so.6	146411,146544	132,67	0	2	0	0	0	0	0	0	0	0
+         4	         3	    146249	    0	      1	                            func@0x23ad0	/usr/lib64/libc.so.6	146128	176	0	7	0	0	0	0	0	0	0	0
+         5	        19	      5138	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+         6	        19	      5128	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+         7	        19	      5133	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+         8	        19	      5108	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+         9	        19	      5085	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        10	        19	      5079	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        11	        19	      5142	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        12	        19	      5096	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        13	        19	      5156	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        14	        19	      5054	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        15	        19	      5124	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        16	        19	      5120	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        17	        19	      5074	    1	      0	               [Loop at line 28 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	5040	128	5168	3	0	0	0	0	0	0	0	0
+        18	         4	      4992	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        19	        18	      5040	    1	      0	               [Loop at line 27 in main]	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4992	271	5263	6	0	0	0	0	0	0	0	0
+        20	         4	      5138	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        21	         4	      5128	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        22	         4	      5133	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        23	         4	      5108	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        24	         4	      5085	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        25	         4	      5079	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        26	         4	      5142	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        27	         4	      5096	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        28	         4	      5156	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        29	         4	      5054	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        30	         4	      5124	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        31	         4	      5120	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        32	         4	      5074	    0	      0	                                    main	/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/vectorized	4656	646	0	5	0	0	0	0	0	0	0	0
+        33	         2	    146411	    0	      1	                       __libc_start_main	/usr/lib64/libc.so.6	146304	337	0	4	0	0	0	0	0	0	0	0
+        34	         2	    146442	    0	      1	                       __libc_start_main	/usr/lib64/libc.so.6	146304	337	0	4	0	0	0	0	0	0	0	0
+        35	        -1	         0	    0	      0	                [Unknown stack frame(s)]	n/a	0	0	0	9	0	0	0	0	0	0	0	0
