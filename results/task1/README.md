@@ -22,8 +22,11 @@ Se debe a que los datos de la línea del techo no están disponibles. El informe
 los datos nuevos más relevantes.
 
 Aparecen 3 nuevas columnas: Compute Performance, Memory y Trip Counts.
+
     - Compute Performance presenta estadísticas para el uso de máscara FLOPS: número de operaciones de punto flotante que se realizan en el código entre el tiempo transcurrido, relación entre las operaciones de punto flotante y los bytes trasferidos
+
     - Memory muestra el tráfico de la memoria. 
+
     - Trip Counts es el número de veces que se ejecuta un bucle.
 
 [Snapshot correspondiente al punto 1.4](Tarea1.4.advixeexpz)
