@@ -11,6 +11,7 @@ El punto rojo representa el bucle del main. Se encuentra en la zona intermedia. 
 
 También aparecen varias líneas que representan las límitaciones del hardware de nuestro sistema: rendimiento máximo de la CPU para diferentes tipos de operaciones, restrincciones del ancho de banda de diferentes niveles de caché, etc
 
+![imagen con el roofline](task2.svg)
 
 2. ¿Por qué está limitado el algoritmo? ¿Qué técnicas podríamos aplicar para mejorar el rendimiento?
 
