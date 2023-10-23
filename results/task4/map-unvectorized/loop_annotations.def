@@ -1,0 +1,6 @@
+loop_begin "/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized" 0x1390 2 0x0
+loop_end "/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized" 0x1445 2 0x0
+
+loop_begin "/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized" 0x137c 3 0x0
+loop_end "/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized" 0x1458 3 0x0
+

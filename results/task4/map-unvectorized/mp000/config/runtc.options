@@ -1,0 +1,11 @@
+-r
+/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/analisis_no_vectorizado/e000/mp000
+-quiet
+-zca
+/home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/analisis_no_vectorizado/e000/loop_annotations.def
+--tool=map
+--record-stack-frame
+--sample-size=300000
+--record-mem-allocations
+--
+./unvectorized

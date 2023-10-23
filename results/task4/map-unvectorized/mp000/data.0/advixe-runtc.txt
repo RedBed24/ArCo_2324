@@ -1,0 +1,32 @@
+
+=== Start: [2023/10/23 10:08:17] === 
+Analysis started...
+Result file: /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/analisis_no_vectorizado/e000/mp000/mp000.advixe 
+Found target process /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized (PID = 11760). Analysis started... 
+Loaded module: /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized. 
+Loaded module: /lib64/ld-linux-x86-64.so.2. 
+Loaded module: [vdso]. 
+Loaded module: /usr/lib64/libstdc++.so.6. 
+Loaded module: /usr/lib64/libm.so.6. 
+Loaded module: /usr/lib64/libgcc_s.so.1. 
+Loaded module: /home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libiomp5.so. 
+Loaded module: /usr/lib64/libc.so.6. 
+Loaded module: /usr/lib64/librt.so.1. 
+Loaded module: /usr/lib64/libpthread.so.0. 
+Loaded module: /usr/lib64/libdl.so.2. 
+Unloaded module: /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized. 
+Unloaded module: /lib64/ld-linux-x86-64.so.2. 
+Unloaded module: [vdso]. 
+Unloaded module: /usr/lib64/libstdc++.so.6. 
+Unloaded module: /usr/lib64/libm.so.6. 
+Unloaded module: /usr/lib64/libgcc_s.so.1. 
+Unloaded module: /home/redbed24/intel/oneapi/compiler/2023.2.0/linux/compiler/lib/intel64_lin/libiomp5.so. 
+Unloaded module: /usr/lib64/libc.so.6. 
+Unloaded module: /usr/lib64/librt.so.1. 
+Unloaded module: /usr/lib64/libpthread.so.0. 
+Unloaded module: /usr/lib64/libdl.so.2. 
+Process /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/unvectorized (PID = 11760) has terminated. 
+Application exit code: 0 
+Result file: /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task4/analisis_no_vectorizado/e000/mp000/mp000.advixe 
+Analysis completed
+=== End: [2023/10/23 10:17:06] === 
