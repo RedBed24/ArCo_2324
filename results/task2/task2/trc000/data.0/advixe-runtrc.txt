@@ -1,0 +1,10 @@
+
+=== Start: [2023/10/23 15:31:13] === 
+Peak bandwidth measurement started...
+Peak bandwidth measurement finished.
+Analysis started...
+Result file: /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task2/tarea2/e000/trc000/trc000.advixe 
+Application exit code: 0 
+Result file: /home/redbed24/git/lab3-lab2-espejo-samuel_diaz-alejo-noelia/results/task2/tarea2/e000/trc000/trc000.advixe 
+Analysis completed
+=== End: [2023/10/23 15:31:31] === 
