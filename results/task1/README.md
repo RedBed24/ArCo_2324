@@ -12,6 +12,7 @@ La diferencia entre ambos es que el tiempo total incluye el tiempo de ejecución
 
 * Realiza un análisis de tipo Survey, accede a  la pestaña "Survey & Roofline" y haz una captura de la información (se usará más tarde).
 
+![Captura correspondiente al punto 1.2](1.2.png)
 [Snapshot correspondiente al punto 1.2](Tarea1.2.advixeexpz)
 
 * Pulsa sobre roofline (dentro de Survey & Roofline) y comprueba que no aparece ningún gráfico. ¿A qué se debe?
@@ -29,4 +30,5 @@ Aparecen 3 nuevas columnas: Compute Performance, Memory y Trip Counts.
 
     - Trip Counts es el número de veces que se ejecuta un bucle.
 
+![Captura correspondiente al punto 1.4](1.4.png)
 [Snapshot correspondiente al punto 1.4](Tarea1.4.advixeexpz)
