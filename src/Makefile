@@ -2,7 +2,7 @@ PRJ = HyperLCA
 CC = icpx
 
 SRCS  = Main_Compresor_HW.cpp HyperLCA_Transform_Operations.cpp
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 
 CFLAGS += -g -Wall -O1
@@ -12,7 +12,7 @@ LDFLAGS += -D VERBOSE -D BLOCK_DBG=1
 
 all : $(PRJ)
 
-%.o : %.c
+%.o : %.cpp
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $^
 
 $(PRJ): $(OBJS)
