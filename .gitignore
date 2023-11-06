@@ -5,3 +5,9 @@
 # Ignore data
 mission.bin
 
+# Ignore Executable
+HyperLCA
+
+# Ignore obj files
+*.o
+
