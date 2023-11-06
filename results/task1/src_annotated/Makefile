@@ -1,22 +1,24 @@
 PRJ = HyperLCA
 CC = icpx
 
-#INCLUDEDIR=~/intel/oneapi/advisor/latest/sdk/include/advisor-annotate.h
-#OBJDIR=~/intel/oneapi/advisor/latest/sdk/lib64/advisor-annotate.mod
+PRODUCT_YEAR=2023
+
+INCLUDEDIR=${ADVISOR_$(PRODUCT_YEAR)_DIR}/include/
+#OBJDIR=${ADVISOR_$(PRODUCT_YEAR)_DIR}/lib64
 
 SRCS  = Main_Compresor_HW.cpp HyperLCA_Transform_Operations.cpp
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 
 CFLAGS += -g -Wall -O1
-CPPFLAGS += -fopenmp #-I$(INCLUDEDIR)
-LDFLAGS += -D VERBOSE -D BLOCK_DBG=1 #-l$(OBJDIR)
+CPPFLAGS += -fopenmp -I $(INCLUDEDIR)
+LDFLAGS += -D VERBOSE -D BLOCK_DBG=1 -ldl
 
 
 all : $(PRJ)
 
-%.o : %.c
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $^
+%.o : %.cpp
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $^ -I $(INCLUDEDIR)
 
 $(PRJ): $(OBJS)
 	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@

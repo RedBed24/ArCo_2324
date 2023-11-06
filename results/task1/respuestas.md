@@ -75,7 +75,14 @@ $ find intel/oneapi/ -iname "advisor-annotate.h"
 intel/oneapi/advisor/latest/sdk/include/advisor-annotate.h
 ```
 
+Aunque la documentación de intel recomienda usar la variable de entorno "ADVISOR\_2023\_DIR".
+
 La flag `-Idir` del compilador indica qué directorios usar para buscar archivos de cabecera.
 
-Como para poder usar las annotaciones, debemos hacer `#include "advisor-annotate.h"`, también debemos indicar el directorio donde este se encuentre, es decir, intel/oneapi/advisor/latest/sdk/include/.
+Como para poder usar las annotaciones, debemos hacer `#include <advisor-annotate.h>`, también debemos indicar el directorio donde este se encuentre, para esto tendremos que añadir las flags correspondientes de compilación.
+
+Pero no sabemos dónde se encuentra el archivo compilado con las funciones de anotación.
+Incluso aunque se busque igual que se hizo con el archivo de cabecera.
+
+Se ha encontrado "advisor\_annotate.mod".
 
