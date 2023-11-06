@@ -27,7 +27,46 @@ Usaremos `lscpu` para obtener esta información:
 
 Se ha dejado toda la información que pueda ser relevante.
 
+
 # Anotaciones
+
+Primero se hará un análisis de survey para tener una primera impresión del tiempo de ejecución y dónde se gasta más tiempo para poder elegir unos bucles a analizar con las anotaciones.
+
+## Problemas previos
+
+Al compilar y ejecutar una primera vez, nos hemos dado cuenta de que advisor no es capaz de encontrar las flags de debug.
+Esto es porque no se han especificado la flag `-g` al compilar, aunque el makefile cuenta con estas.
+Si vemos qué órdenes se ejecutan al lanzar la regla `all` del makefile, vemos que se usa g++ sin algunas flags.
+
+Si nos damos cuenta, la variable OBJS no contiene nada ya que ningún SRC termina en .c, debería ser .cpp
+Lo mismo ocurre en la regla %.o
+
+## Primer análisis
+
+Una vez solucionado esto, sí que podemos realizar el survey.
+Observamos que hay 2 bucles en el archivo "Main\_compressor\_HW.cpp" que se llevan todo el tiempo total:
+
+1. Lectura de datos.
+2. Bucle que itera los bloques.
+
+No tiene sentido investigar la carga de los datos ya que `fread` asegura acceso único, por lo que si paralelizamos en hilos, realmente sólo uno estaría leyendo datos.
+Tampoco tiene sentido usar vectorización porque no se usan vectores.
+La única mejora que se podría hacer es usar un búffer de varios elementos y leer más bytes en una iteración.
+
+Por lo que nos fijaremos más en el segundo.
+Haremos anotaciones en este y otros bucles que tenga tras la llamada a la función `HyperLCA_transform`.
+El bucle de creación de un bloque no tiene interés ya que es una copia, a lo sumo se podría usar `memcpy`.
+La escritura en el archivo tampoco tiene mayor complicación, al igual que la lectura, se hace de forma exclusiva.
+
+A primera vista, parece que este bucle es un buen candidato a hacer en varios hilos, no parece tener dependencias.
+El "problema" sería la escritura en el archivo porque se hace de forma exclusiva, pero esto da igual ya que tarda un tiempo ínfimo.
+Por lo que es muy probable que obtengamos una mejora de paralelizar por la llamada de `HyperLCA_transform`.
+
+Dentro de `HyperLCA_transform` hay tres funciones, `brighness`, `proyectingImg` y `subtractingInformation` que consumen bastante tiempo.
+Estas tienen un gran self time, es decir, es aquí donde el código pasa más tiempo.
+Tendremos que analizarlo más intensamente.
+
+## Uso de las anotaciones
 
 Para encontrar el archivo: "advisor-annotate.h"
 
@@ -39,9 +78,4 @@ intel/oneapi/advisor/latest/sdk/include/advisor-annotate.h
 La flag `-Idir` del compilador indica qué directorios usar para buscar archivos de cabecera.
 
 Como para poder usar las annotaciones, debemos hacer `#include "advisor-annotate.h"`, también debemos indicar el directorio donde este se encuentre, es decir, intel/oneapi/advisor/latest/sdk/include/.
-**bind with .o??**
-
-No tiene sentido investigar la carga de los datos ya que `fread` asegura acceso único, por lo que si paralelizamos en hilos, realmente sólo uno estaría leyendo datos.
-Tampoco tiene sentido usar vectorización porque no se usan vectores.
-La única mejora que se podría hacer es usar un búffer de varios elementos y leer más bytes en una iteración.
 
