@@ -12,13 +12,13 @@ OBJS = $(SRCS:.cpp=.o)
 
 CFLAGS += -g -Wall -O1
 CPPFLAGS += -fopenmp -I $(INCLUDEDIR)
-LDFLAGS += -D VERBOSE -D BLOCK_DBG=1 -ldl
+LDFLAGS += -D VERBOSE -D BLOCK_DBG=1
 
 
 all : $(PRJ)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $^ -I $(INCLUDEDIR)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -c $^
 
 $(PRJ): $(OBJS)
 	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@

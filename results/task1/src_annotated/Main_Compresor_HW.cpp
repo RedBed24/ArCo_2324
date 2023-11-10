@@ -91,8 +91,9 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
   unsigned int inputIndex = 0;
 
   
-ANNOTATE_SITE_BEGIN("main_loop")
+  ANNOTATE_SITE_BEGIN(main_loop);
   for(int blockIndex = 0; blockIndex < nBlocks; blockIndex++){
+    ANNOTATE_ITERATION_TASK(iteration);
     // Creating the block vector
     for(int elementIndex=0; elementIndex<nInputElementsPerBlock; elementIndex++){
       input_block[ elementIndex ] = input_img[ inputIndex + elementIndex ];
@@ -117,5 +118,5 @@ ANNOTATE_SITE_BEGIN("main_loop")
     // Write the block bitstream to a file
     write_binary_file(OutputFileName, trasformOutputData, (BANDS+(BANDS+BLOCK_SIZE)*PMAX));
   }
-ANNOTATE_SITE_END("main_loop")
+  ANNOTATE_SITE_END(main_loop);
 }
