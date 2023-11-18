@@ -20,7 +20,10 @@ Para tener más información, seleccionaremos otros sitos de grano mayor:
 2. Lectura de datos: Main\_Compresor\_HW.cpp: 62 a 67.
 3. Hyper: HyperLCA\_Transform\_Operations.cpp: 54 a 81.
 
-<!-- TODO: Realizar analisis y guardar snapshot, quizá mejor hacerlo en la tarea 1?? -->
+Al hacer el snapshot, el threading model se guarda como "otro" en vez de OpenMP, esto altera el gráfico y datos.
+Se ha creado una captura de pantalla con los resultados originales:
+
+![captura](captura_datos_openmp.png)
 
 # Analisis de escalabilidad
 
