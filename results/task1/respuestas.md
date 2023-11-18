@@ -77,12 +77,24 @@ intel/oneapi/advisor/latest/sdk/include/advisor-annotate.h
 
 Aunque la documentación de intel recomienda usar la variable de entorno "ADVISOR\_2023\_DIR".
 
-La flag `-Idir` del compilador indica qué directorios usar para buscar archivos de cabecera.
+Para poder usar las annotaciones, debemos hacer `#include <advisor-annotate.h>`, también debemos indicar el directorio donde este se encuentre.
+Esto se hace con la flag correspondientes de compilación: `-Idir` indica qué directorios usar para buscar archivos de cabecera.
 
-Como para poder usar las annotaciones, debemos hacer `#include <advisor-annotate.h>`, también debemos indicar el directorio donde este se encuentre, para esto tendremos que añadir las flags correspondientes de compilación.
+Al leer el archivo de cabecera, pensamos que era necesario poner también `#define ANNOTATE_DECLARE`.
+Pero esto daba un problema de enlazado.
 
-Pero no sabemos dónde se encuentra el archivo compilado con las funciones de anotación.
-Incluso aunque se busque igual que se hizo con el archivo de cabecera.
+Se han seleccionado varios bucles para analizar:
 
-Se ha encontrado "advisor\_annotate.mod".
+1. Principal: Main\_Compresor\_HW.cpp:93 a 120.
+2. Brillo: HyperLCA\_Transform\_Operations.cpp: 126 a 143.
+3. Proyección de la imagen: HyperLCA\_Transform\_Operations.cpp: 173 a 186.
+4. Substracción de información: HyperLCA\_Transform\_Operations.cpp: 198 a 210.
+
+Al final, para compilar se usan:
+
+``` Bash
+icpx -D VERBOSE -D BLOCK_DBG=1 -g -Wall -O1 -fopenmp -I /opt/intel/oneapi/advisor/2023.2.0/include/ -c Main_Compresor_HW.cpp
+icpx -D VERBOSE -D BLOCK_DBG=1 -g -Wall -O1 -fopenmp -I /opt/intel/oneapi/advisor/2023.2.0/include/ -c HyperLCA_Transform_Operations.cpp
+icpx -D VERBOSE -D BLOCK_DBG=1 -g -Wall -O1 -fopenmp -I /opt/intel/oneapi/advisor/2023.2.0/include/ Main_Compresor_HW.o HyperLCA_Transform_Operations.o -o HyperLCA
+```
 
