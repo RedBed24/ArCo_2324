@@ -1,6 +1,6 @@
-# Ignore Vim backup files
-*.swp
-*~
+# Ignore output
+output/
+compressedBitstream.bin
 
 # Ignore data
 mission.bin
