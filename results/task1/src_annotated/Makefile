@@ -4,9 +4,8 @@ CC = icpx
 PRODUCT_YEAR=2023
 
 INCLUDEDIR=${ADVISOR_$(PRODUCT_YEAR)_DIR}/include/
-#OBJDIR=${ADVISOR_$(PRODUCT_YEAR)_DIR}/lib64
 
-SRCS  = Main_Compresor_HW.cpp HyperLCA_Transform_Operations.cpp
+SRCS = Main_Compresor_HW.cpp HyperLCA_Transform_Operations.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 
@@ -15,13 +14,13 @@ CPPFLAGS += -fopenmp -I $(INCLUDEDIR)
 LDFLAGS += -D VERBOSE -D BLOCK_DBG=1
 
 
-all : $(PRJ)
+all: $(PRJ)
 
-%.o : %.cpp
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -c $^
+%.o: %.cpp
+	$(CC) $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -c $^
 
 $(PRJ): $(OBJS)
-	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@
+	$(CC) $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 mission.bin:
 	megadl 'https://mega.nz/file/Z5JUkSoI#boptGx0TD4YU1FGz5WxVkxgB0-fav1sQiVVCk2lz_CA'
@@ -29,9 +28,9 @@ mission.bin:
 run: $(PRJ) mission.bin
 	./$(PRJ)
 
-
 clean:
 	$(RM) -rf $(PRJ) *~ *.o compressedBitstream.bin output
 
 cleanall: clean
 	$(RM) -rf mission.bin
+

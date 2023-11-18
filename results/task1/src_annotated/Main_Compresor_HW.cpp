@@ -9,7 +9,6 @@
 using namespace std;
 #endif
 
-#define ANNOTATE_DECLARE
 #include <advisor-annotate.h>
 
 #include "HyperLCA_Transform_Operations.h"

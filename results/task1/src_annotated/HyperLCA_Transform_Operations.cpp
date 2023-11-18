@@ -7,6 +7,8 @@
 using namespace std;
 #endif
 
+#include <advisor-annotate.h>
+
 
 void HyperLCA_transform(int blockIndex, unsigned short *ImgRef,
 			unsigned short *trasformOutputData)
@@ -121,7 +123,9 @@ void brighness(short *Img, int &maxIndex, long long &maxBrightness)
   unsigned long long actualBrightness;
   long long ImgValueLong;
 
+  ANNOTATE_SITE_BEGIN(brighness_loop);
   for(int pixel=0; pixel<BLOCK_SIZE; pixel++){
+    ANNOTATE_ITERATION_TASK(brighness_iteration);
     // Computing the brightness of one pixel
     actualBrightness = 0;
     for(int band=0; band<BANDS; band++){	
@@ -136,6 +140,7 @@ void brighness(short *Img, int &maxIndex, long long &maxBrightness)
       maxBrightness = actualBrightness;
     }
   }
+  ANNOTATE_SITE_END(brighness_loop);
 }	
 
 
@@ -165,7 +170,9 @@ void projectingImg(short *Img, int *projection, int *uVector)
   long long ImgValueLong;
   long long projectionValueLong;
 	
+  ANNOTATE_SITE_BEGIN(projecting_loop);
   for(int pixel=0; pixel<BLOCK_SIZE; pixel++){
+    ANNOTATE_ITERATION_TASK(projecting_iteration);
     projectionValueLong = 0;
     for(int band=0; band<BANDS; band++){
       uValueLong = uVector[band];
@@ -176,6 +183,7 @@ void projectingImg(short *Img, int *projection, int *uVector)
     }
     projection[pixel] = projectionValueLong>>2; // 2.30 (considering the signe)
   }
+  ANNOTATE_SITE_END(proyecting_loop);
 }
 
 
@@ -187,7 +195,9 @@ void subtractingInformation(short *Img, int *projection, int *qVector)
   long long qValueLong;
   long long projectionValueLong;
 	
+  ANNOTATE_SITE_BEGIN(subtracting_loop);
   for(int pixel=0; pixel<BLOCK_SIZE; pixel++) {
+    ANNOTATE_ITERATION_TASK(subtracting_iteration);
     for(int band=0; band<BANDS; band++)	{
       qValueLong = qVector[band];
       projectionValueLong = projection[pixel];
@@ -197,6 +207,7 @@ void subtractingInformation(short *Img, int *projection, int *qVector)
       Img[pixel*BANDS + band] -= longValueToSubtract >> 30; // 20.12 bits (considering the signe)
     }
   }
+  ANNOTATE_SITE_END(subtracting_loop);
 }
 
 
