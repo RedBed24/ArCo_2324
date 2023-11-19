@@ -13,10 +13,10 @@ LDFLAGS += -D VERBOSE -D BLOCK_DBG=1
 all : $(PRJ)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $^
+	$(CC) $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -c $^
 
 $(PRJ): $(OBJS)
-	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@
+	$(CC) $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 mission.bin:
 	megadl 'https://mega.nz/file/Z5JUkSoI#boptGx0TD4YU1FGz5WxVkxgB0-fav1sQiVVCk2lz_CA'
