@@ -69,9 +69,10 @@ void read_Integer_Matrix(char* inputFileName, unsigned short *input_img)
 
 
 // Function for writting one specific binary bitsream to a file
-void write_binary_file(char* OutputFileName, unsigned short *compressed_stream, unsigned int nbytes)
+void write_binary_file(char* OutputFileName, unsigned short *compressed_stream, unsigned int nbytes, unsigned int blockIndex)
 {
   FILE * outputFile = fopen(OutputFileName, "a+w+b");
+  fseek (outputFile, blockIndex * BLOCK_SIZE, 0);
   fwrite (compressed_stream , sizeof(short), nbytes, outputFile);
   fclose (outputFile);
 }
@@ -114,6 +115,6 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
 #endif
 		
     // Write the block bitstream to a file
-    write_binary_file(OutputFileName, trasformOutputData, (BANDS+(BANDS+BLOCK_SIZE)*PMAX));
+    write_binary_file(OutputFileName, trasformOutputData, (BANDS+(BANDS+BLOCK_SIZE)*PMAX), blockIndex);
   }
 }
