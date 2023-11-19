@@ -46,6 +46,9 @@ Al hacer el snapshot, el threading model se guarda como "otro" en vez de OpenMP,
 Se ha creado una captura de pantalla con los resultados originales:
 
 ![captura](imgs/captura_datos_openmp.png)
+![brigthness](imgs/brighness_loop.png)
+![projecting](imgs/projecting_loop.png)
+![subtracting](imgs/subtracting_loop.png)
 
 # Analisis de escalabilidad
 
@@ -54,4 +57,12 @@ Ya se dio una breve explicación de porqué, por lo que no repetiremos esta.
 Pero este análisis ha ayudado a confirmar que era así.
 
 Para los otros dos bucles, podemos ver una muy buena mejora, sobre todo en el principal.
-En cambio, para el bucle de la función Hyper\_LCA\_transform
+En cambio, para el bucle de la función `Hyper_LCA_transform`, llega un punto a partir del cual no se mejora aunque se añadan threads.
+Esto es por la media de iteraciones realizadas, si nos damos cuenta es 12, por lo que añadir más hilos sólo crearía hilos ociosos.
+
+Para los otros bucles analizados, en la primera snapshot, se ve un claro empeoramiento.
+Puede ser porque el tiempo pasado en cada iteración es mínimo, y el hecho de crear hilos para tareas tan cortas es más pesado que hacer las tareas como tal.
+De hecho, como planteamos en la primera tarea, advisor nos recomienda considerar vectorización para estos bucles.
+
+También se ha considerado cambiar algunos bucles por llamadas a `memcpy`, pero algunos como `writingCentroidResult` no son copias propiamente dichas ya que los elementos no ocupan los mismos bytes.
+

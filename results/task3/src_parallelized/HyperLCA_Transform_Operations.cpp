@@ -48,6 +48,7 @@ void HyperLCA_transform(int blockIndex, unsigned short *ImgRef,
   duplicateAndCentralizeImg(ImgRef, Img, centroid);
 
   // Extracting the representative pixels and their projections
+  #pragma omp parallel for private(maxIndex, maxBrightness, qVector, uVector, projection)
   for(int iter=0; iter<PMAX; iter++){
     // Calculating the brightness of each pixel	
     brighness(Img, maxIndex, maxBrightness);
@@ -216,9 +217,7 @@ void writingCentroidResult(int *centroid, unsigned short *trasformOutputData)
 void writingPixelResult(int &maxIndex, unsigned short *ImgRef,
 	unsigned short *trasformOutputData, unsigned int lastOutputElement)
 {
-  for(int band=0; band<BANDS; band++){
-    trasformOutputData[lastOutputElement+band] = ImgRef[maxIndex*BANDS + band];  
-  }
+  memcpy(trasformOutputData + lastOutputElement, ImgRef + maxIndex * BANDS, BANDS * sizeof(unsigned short));
 }
 	
 

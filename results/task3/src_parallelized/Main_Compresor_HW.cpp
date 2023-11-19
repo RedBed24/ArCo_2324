@@ -10,13 +10,14 @@ using namespace std;
 #endif
 
 
+#include <omp.h>
 #include "HyperLCA_Transform_Operations.h"
 
 
 // --- Function Signatures
 void read_Integer_Matrix(char* inputFileName, unsigned short *input_img);
 void write_binary_file(char* OutputFileName, unsigned short *compressed_stream, unsigned int written_bytes);
-void runCompressor(unsigned short *input_img, char* OutputFileName);		
+void runCompressor(unsigned short *input_img, FILE* OutputFileName);		
 
 
 // --- Main
@@ -35,7 +36,9 @@ int main(int argc, char* argv[])
   read_Integer_Matrix((char*)INPUT_FILE_NAME, input_img);
 
   // Run the compressor
-  runCompressor(input_img, (char*)OUTPUT_FILE_NAME);
+  FILE * outputFile = fopen((char*)OUTPUT_FILE_NAME, "wb");
+  runCompressor(input_img, outputFile);
+  fclose (outputFile);
 
   //Write compressed stream
   // It is done for each block
@@ -69,18 +72,19 @@ void read_Integer_Matrix(char* inputFileName, unsigned short *input_img)
 
 
 // Function for writting one specific binary bitsream to a file
-void write_binary_file(char* OutputFileName, unsigned short *compressed_stream, unsigned int nbytes, unsigned int blockIndex)
+void write_binary_file(FILE* outputFile, unsigned short *compressed_stream, unsigned int nbytes, unsigned int blockIndex)
 {
-  FILE * outputFile = fopen(OutputFileName, "a+w+b");
-  fseek (outputFile, blockIndex * BLOCK_SIZE, 0);
-  fwrite (compressed_stream , sizeof(short), nbytes, outputFile);
-  fclose (outputFile);
+  #pragma omp critical
+  {
+    fseek (outputFile, blockIndex * sizeof(short) * nbytes, SEEK_SET);
+    fwrite (compressed_stream , sizeof(short), nbytes, outputFile);
+  }
 }
 
 
 
 // Function for executing the process
-void runCompressor(unsigned short *input_img, char* OutputFileName)		
+void runCompressor(unsigned short *input_img, FILE* OutputFile)		
 {
   // Initialize and declare the variables
   unsigned int nBlocks = (COLUMNS*LINES) / BLOCK_SIZE;
@@ -115,6 +119,6 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
 #endif
 		
     // Write the block bitstream to a file
-    write_binary_file(OutputFileName, trasformOutputData, (BANDS+(BANDS+BLOCK_SIZE)*PMAX), blockIndex);
+    write_binary_file(OutputFile, trasformOutputData, (BANDS+(BANDS+BLOCK_SIZE)*PMAX), blockIndex);
   }
 }
