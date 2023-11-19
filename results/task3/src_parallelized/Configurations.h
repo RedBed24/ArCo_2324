@@ -14,6 +14,7 @@
 #define BANDS 180
 #define PMAX 12
 
+#define READ_BUFF_SIZE 64
 
 // Variables values obtained from the input parameters
 #define NUMBER_OF_PIXELS (COLUMNS*LINES)

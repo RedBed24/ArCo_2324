@@ -55,12 +55,14 @@ void read_Integer_Matrix(char* inputFileName, unsigned short *input_img)
   int numberOfReadElement = 0;
   int bytesPerElement = 2;
 
-  unsigned short readElement;
+  unsigned short readElements[READ_BUFF_SIZE];
 
+  int elements_actually_read;
+  
   while ( numberOfReadElement < IMAGE_SIZE) {
-    fread(&readElement, bytesPerElement, 1, inputFile);
-    input_img[numberOfReadElement] = (unsigned short)readElement;
-    numberOfReadElement++;
+    elements_actually_read = fread(readElements, bytesPerElement, READ_BUFF_SIZE, inputFile);
+    memcpy(input_img + numberOfReadElement, readElements, elements_actually_read * bytesPerElement);
+    numberOfReadElement += elements_actually_read;
   }
   fclose (inputFile);
 }
