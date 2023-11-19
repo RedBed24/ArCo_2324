@@ -7,7 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CFLAGS += -g -Wall -O1
 CPPFLAGS += -fopenmp
-LDFLAGS += -D VERBOSE -D BLOCK_DBG=1 
+LDFLAGS += -D VERBOSE -D BLOCK_DBG=1
 
 
 all: $(PRJ)
