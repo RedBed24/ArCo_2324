@@ -56,7 +56,7 @@ void read_Integer_Matrix(char* inputFileName, unsigned short *input_img)
   int bytesPerElement = 2;
 
   unsigned short readElement;
-  
+
   while ( numberOfReadElement < IMAGE_SIZE) {
     fread(&readElement, bytesPerElement, 1, inputFile);
     input_img[numberOfReadElement] = (unsigned short)readElement;
@@ -88,13 +88,13 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
   
   unsigned int inputIndex = 0;
 
-  
+  #pragma omp parallel for private(input_block, trasformOutputData, inputIndex) schedule(dynamic)
   for(int blockIndex = 0; blockIndex < nBlocks; blockIndex++){
     // Creating the block vector
+    inputIndex = blockIndex * nInputElementsPerBlock;
     for(int elementIndex=0; elementIndex<nInputElementsPerBlock; elementIndex++){
       input_block[ elementIndex ] = input_img[ inputIndex + elementIndex ];
     }
-    inputIndex += nInputElementsPerBlock;
 		
     HyperLCA_transform(blockIndex, input_block, trasformOutputData);
 
