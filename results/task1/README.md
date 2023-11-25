@@ -29,17 +29,33 @@ Device: Intel(R) HD Graphics 530
 
 Que es la gráfica integrada.
 
-Para probar qué ocurre cuando no se dispone de una gráfica, se ha usado el devcloud sin pedir una gpu.
+Para probar qué ocurre cuando no se dispone de una gráfica, se ha usado el devcloud sin pedir una gpu, el resultado está en la siguiente sección.
 
 ## Prueba a obtener una GPU desde devcloud modificando el programa query.cpp en gpu_query.cpp
-**guarda el fichero en results/task1/src.**
+
+```
+terminate called after throwing an instance of 'sycl::_V1::runtime_error'
+  what():  No device of requested type available. Please check https://software.intel.com/content/www/us/en/develop/articles/intel-oneapi-dpcpp-system-requirements.html -1 (PI_ERROR_DEVICE_NOT_FOUND)
+Aborted
+```
+
+No se encuentra disponible el dispositivo pedido.
 
 ## ¿Cómo has obtenido la GPU? ¿Cómo has solicitado a qsub que quieres un nodo con GPU?
-**Contesta aquí.**
+
+``` Bash
+qsub -l nodes=1:gpu:ppn=2 -I
+```
+
+Que devuelve:
+
+```
+Device: Intel(R) UHD Graphics [0x9a60]
+```
 
 ## Modifica el programa para obtener más datos del dispositivo.
-**guarda el fichero en results/task1/src/more_query.cpp**
-vendor
+
+![Código fuente](src/more_query.cpp)
 
 ------
 # Task 1
