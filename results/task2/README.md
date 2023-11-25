@@ -6,16 +6,40 @@ El código en src/task2/buffer.cpp debería representar el siguiente flujo:
 4. Calcular B como resultado del valor de B multiplicado por A
 
 ## Comprueba el resultado y muéstralo a continuación
-**Contesta aquí.**
+
+```
+0
+2
+8
+18
+32
+50
+72
+98
+128
+162
+200
+242
+288
+338
+392
+450
+```
 
 ## ¿Qué abstracción se está usando para los contenedores de datos?
-**Contesta aquí.**
+
+Accesos a búffers, el contendor es range con una dimensión, tamaño 16.
 
 ## ¿Cómo se está formando el DAG? ¿implicitamente? ¿explicitamente?
-**Contesta aquí.**
+
+Implicíta, por el uso de accesos.
 
 ## Enumera todas las dependencias y el tipo de dependencias
-**Contesta aquí**
+
+- Kernel 2 y Kernel 1 RAW por buffer A.
+  - En este caso, se indica que es sólo de lectura, por lo que podemos pensar que es WAW, pero la operación que se hace es `+=`, por lo que se lee.
+- Kernel 4 y Kernel 2 RAW por buffer A.
+- Kernel 4 y Kernel 3 RAW por buffer B.
 
 ----
 
