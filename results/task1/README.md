@@ -55,7 +55,7 @@ Device: Intel(R) UHD Graphics [0x9a60]
 
 ## Modifica el programa para obtener más datos del dispositivo.
 
-![Código fuente](src/more_query.cpp)
+[Código fuente](src/more_query.cpp)
 
 ------
 # Task 1
