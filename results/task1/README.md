@@ -3,13 +3,33 @@ Familiarizarse con el uso de DPC.
 En primer lugar copia el código de src/task1/query.cpp en results/task1/src y compilalo con dpcpp.
 
 ## ¿Qué salida obtienes?
-**Contesta aquí.**
+
+Al compilar se obtienen muchas advertencias indicando obsolescencia.
+Pero genera un ejecutable, al ejecutarlo se obtiene:
+
+```
+Device: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+```
+
+Muestra un *device*, la CPU junto a información sobre esta.
 
 ## ¿Qué tipos de selectores tenemos en DPC? ¿Podemos obtener una GPU? ¿Qué pasa si no existe el dispositivo requerido?
-**Contesta aquí.**
 
-Es probable que alguno de los dispositivos que te permite seleccionar DPC no los tengas disponibles en tu PC, no pasa nada, para eso tenemos
-devcloud.
+- `default_selector`, selecciona el dispositivo mediante una heurística
+- `cpu_selector`
+- `gpu_selector`
+- `accelerator_selector`, que se refiere a la fpga
+- `fpga_selector_v`, en caso de existir el hardware, definido en sycl/ext/intel/fpga\_extensions.hpp
+
+Al usar `gpu_selector`, se obtiene:
+
+```
+Device: Intel(R) HD Graphics 530
+```
+
+Que es la gráfica integrada.
+
+Para probar qué ocurre cuando no se dispone de una gráfica, se ha usado el devcloud sin pedir una gpu.
 
 ## Prueba a obtener una GPU desde devcloud modificando el programa query.cpp en gpu_query.cpp
 **guarda el fichero en results/task1/src.**
@@ -19,6 +39,7 @@ devcloud.
 
 ## Modifica el programa para obtener más datos del dispositivo.
 **guarda el fichero en results/task1/src/more_query.cpp**
+vendor
 
 ------
 # Task 1
