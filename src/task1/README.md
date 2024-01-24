@@ -9,7 +9,9 @@ En primer lugar, localiza el código correspondiente al centroide y cómo se lee
 Busca cómo crear la cola y pasa como parámetro a la cola el selector por defecto. Recuerda que la cola se tiene que crear antes de cualquier tipo de computo.
 
 ## ¿Para que sirve la cola?
-**Contesta aquí**
+La cola nos permite asignar tareas a un dispositivo.
+Es decir, podemos ejecutar kernels en el hardware asignado a la cola.
+También podemos especificar las dependencias entre estas tareas.
 
 ## Para cada array crea sus buffer correspondientes
 Recuerda que uno de los modos de acceder a memoria en DPC es mediante los buffers y los accessors. Este es el método que vamos a usar en esta práctica. Para ello, crea los buffers una vez inicializados los espacios de memoria donde vamos a trabajar, es decir, justo antes del for.
