@@ -10,6 +10,8 @@ using namespace std;
 #endif
 
 
+#include <CL/sycl.hpp>
+#using namespace cl::sycl;
 #include "HyperLCA_Transform_Operations.h"
 
 
@@ -108,7 +110,7 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
       ofstream goldenFile;
       goldenFile.open(filenameG.str());
       for(int it=0; it !=BANDS+((BLOCK_SIZE+BANDS)*PMAX); it++)
-	goldenFile << trasformOutputData[it] << endl;
+	goldenFile << trasformOutputData[it] << std::endl;
       goldenFile.close();
     }
 #endif

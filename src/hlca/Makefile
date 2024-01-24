@@ -6,7 +6,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 
 CFLAGS += -g -Wall -O1
-CPPFLAGS += -fopenmp
+CPPFLAGS += -fopenmp -fsycl
 LDFLAGS += -D VERBOSE -D BLOCK_DBG=1 
 
 

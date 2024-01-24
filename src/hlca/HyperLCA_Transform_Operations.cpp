@@ -1,3 +1,5 @@
+#include <CL/sycl.hpp>
+using namespace cl::sycl;
 #include "HyperLCA_Transform_Operations.h"
 
 #ifdef VERBOSE
@@ -15,7 +17,7 @@ void HyperLCA_transform(int blockIndex, unsigned short *ImgRef,
 
 #ifdef VERBOSE
   if (blockIndex == BLOCK_DBG || BLOCK_DBG==-1)
-    cout << "BLOCK: " << blockIndex << endl;
+    cout << "BLOCK: " << blockIndex << std::endl;
 #endif
   // Img copy of ImgRef in u shorts
   // centroid (Average pixel in u int)
@@ -57,7 +59,7 @@ void HyperLCA_transform(int blockIndex, unsigned short *ImgRef,
 				
 #ifdef VERBOSE
     if (blockIndex == BLOCK_DBG || BLOCK_DBG==-1){
-      cout <<  maxIndex << endl;
+      cout <<  maxIndex << std::endl;
     }
 #endif
 
