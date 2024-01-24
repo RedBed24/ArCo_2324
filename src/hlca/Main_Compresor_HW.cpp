@@ -52,15 +52,18 @@ void read_Integer_Matrix(char* inputFileName, unsigned short *input_img)
 {
   FILE * inputFile = fopen(inputFileName, "r+b");
   
+  unsigned int nInputElementsPerBlock = BLOCK_SIZE*BANDS;
   int numberOfReadElement = 0;
   int bytesPerElement = 2;
 
-  unsigned short readElement;
+  unsigned short readElements[READ_BUFF_SIZE];
+
+  int elements_actually_read;
   
-  while ( numberOfReadElement < IMAGE_SIZE) {
-    fread(&readElement, bytesPerElement, 1, inputFile);
-    input_img[numberOfReadElement] = (unsigned short)readElement;
-    numberOfReadElement++;
+  while ( numberOfReadElement < nInputElementsPerBlock) {
+    elements_actually_read = fread(readElements, bytesPerElement, READ_BUFF_SIZE, inputFile);
+    memcpy(input_img + numberOfReadElement, readElements, elements_actually_read * bytesPerElement);
+    numberOfReadElement += elements_actually_read;
   }
   fclose (inputFile);
 }
@@ -69,7 +72,7 @@ void read_Integer_Matrix(char* inputFileName, unsigned short *input_img)
 // Function for writting one specific binary bitsream to a file
 void write_binary_file(char* OutputFileName, unsigned short *compressed_stream, unsigned int nbytes)
 {
-  FILE * outputFile = fopen(OutputFileName, "a+w+b");
+  FILE * outputFile = fopen(OutputFileName, "wb");
   fwrite (compressed_stream , sizeof(short), nbytes, outputFile);
   fclose (outputFile);
 }
@@ -80,7 +83,7 @@ void write_binary_file(char* OutputFileName, unsigned short *compressed_stream, 
 void runCompressor(unsigned short *input_img, char* OutputFileName)		
 {
   // Initialize and declare the variables
-  unsigned int nBlocks = (COLUMNS*LINES) / BLOCK_SIZE;
+  unsigned int blockIndex = 0;
   unsigned int nInputElementsPerBlock = BLOCK_SIZE*BANDS;
   
   unsigned short input_block[BLOCK_SIZE * BANDS];	
@@ -89,7 +92,6 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
   unsigned int inputIndex = 0;
 
   
-  for(int blockIndex = 0; blockIndex < nBlocks; blockIndex++){
     // Creating the block vector
     for(int elementIndex=0; elementIndex<nInputElementsPerBlock; elementIndex++){
       input_block[ elementIndex ] = input_img[ inputIndex + elementIndex ];
@@ -113,5 +115,4 @@ void runCompressor(unsigned short *input_img, char* OutputFileName)
 		
     // Write the block bitstream to a file
     write_binary_file(OutputFileName, trasformOutputData, (BANDS+(BANDS+BLOCK_SIZE)*PMAX));
-  }
 }
