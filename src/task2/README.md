@@ -11,15 +11,19 @@ Una vez completada la paralelización realiza las medidas de rendimiento para ve
 
 
 ## Modifica el código para poder desplegar el mismo en una GPU, utiliza devcloud para probar la ejecución en GPU
+<!-- Ver práctica anterior tarea 1 gpu -->
 
 ### Modifica la tabla anterior para añadir los tiempos con GPU
 **Contesta aquí**
 
 ### ¿Cómo te has asegurado de ejecutar el código en una GPU?
-**Pon el comando de devcloud**
+```Bash
+qsub -I -l nodes=1:gpu:ppn=2
+```
 
 ### Modifica el programa para obtener información sobre el nodo que ejecuta la cola
 **Guarda el código resultante en results/task2/task2.cpp**
+<!-- Ver práctica anterior tarea 1 -->
 
 ----
 
